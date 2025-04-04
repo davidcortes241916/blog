@@ -96,7 +96,7 @@
           {% if posts %}
             {% for post in posts %}
                 <div class="post-preview">
-                  <a href="#">
+                  <a href="{% url "blog:detallePost" post.slug %}">
                     <h2 class="post-title">
                       {{ post.titulo }}
                     </h2>
@@ -125,6 +125,7 @@
          {% if posts.has_previous %}
               <div class="clearfix">
                 <a href="?page={{ posts.previous_page_number }}{% if request.GET.search %}&q={{ request.GET.search }}{% endif %}" class="btn btn-primary float-left">Anterior</a>
+                <!--es para que busque un post sin problema y lo visualice de forma unica sin mostrar el boton-->
               </div>
          {% endif %}
        </div>

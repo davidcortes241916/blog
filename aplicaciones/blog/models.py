@@ -1,6 +1,8 @@
 from django.db import models
 from ckeditor.fields import RichTextField #se ve asi como si no fuera una libreria
 
+#cuando un modelo se migra, django le agrega 3 permisos: crear, actualizar o eliminar un registro del modelo
+
 # Create your models here.
 class Categoria(models.Model):
     id= models.AutoField(primary_key = True)
